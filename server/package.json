@@ -1,0 +1,18 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "Realtime Zambian Trends Tracker",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Penjani Mkandawire",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "twitter": "^1.7.1"
+  }
+}
