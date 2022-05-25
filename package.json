@@ -10,7 +10,7 @@
     "server": "node server/index.js",
     "heroku:add": "heroku git:remote -a",
     "deploy:heroku": "git push heroku master",
-    "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix client\""
+    "start": "npm run server"
   },
   "author": "Penjani Mkandawire",
   "license": "MIT",
