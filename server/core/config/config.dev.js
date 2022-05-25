@@ -18,7 +18,7 @@ config.dbPass = process.env.dbPass;
 config.dbPort = process.env.dbPort;
 config.dbName = process.env.dbName;
 config.dbConnectUrl = `mongodb+srv://${config.dbUser}:${config.dbPass}@${config.dbHost}/${config.dbName}?retryWrites=true&w=majority`;
-config.serverPort = process.env.serverPort;
+config.serverPort = process.env.PORT;
 config.frontDir = path.resolve(
   path.join(__dirname, "../../../client/build/index.html")
 );
