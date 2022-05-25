@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": false,
+        "amount": 25
+    },
+    "auditLog": "C:\\Dev\\Work\\Projects\\Web Applications\\Twitter Streamer\\server\\log\\.03cc405d02cbafb91012c2c1ff591873e36ba4fb-audit.json",
+    "files": [
+        {
+            "date": 1653504838449,
+            "name": "C:\\Dev\\Work\\Projects\\Web Applications\\Twitter Streamer\\server\\log\\app.log..We-05-2022",
+            "hash": "d3d4c9bdd31b86ac2da9766f59f9ea8d"
+        }
+    ],
+    "hashType": "md5"
+}

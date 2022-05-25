@@ -1,0 +1,75 @@
+{"level":"info","message":"Server started on port: 4000."}
+{"level":"info","message":"\u001b[0mGET /api/v1/tweets/rules \u001b[32m200\u001b[0m 9.650 ms - 601\u001b[0m\n"}
+{"level":"info","message":"\u001b[0mGET /api/v1/tweets/rules \u001b[36m304\u001b[0m 2.389 ms - -\u001b[0m\n"}
+{"level":"info","message":"Server started on port: 4000."}
+{"level":"info","message":"\u001b[0mGET /api/v1/tweets/rules \u001b[36m304\u001b[0m 9.438 ms - -\u001b[0m\n"}
+{"level":"info","message":"Server started on port: 4000."}
+{"level":"info","message":"\u001b[0mGET /api/v1/tweets/rules \u001b[36m304\u001b[0m 9.141 ms - -\u001b[0m\n"}
+{"level":"info","message":"Server started on port: 4000."}
+{"level":"info","message":"\u001b[0mGET /api/v1/tweets/rules \u001b[36m304\u001b[0m 7.763 ms - -\u001b[0m\n"}
+{"level":"info","message":"Server started on port: 4000."}
+{"level":"info","message":"\u001b[0mGET /api/v1/tweets/rules \u001b[36m304\u001b[0m 8.678 ms - -\u001b[0m\n"}
+{"level":"info","message":"Server started on port: 4000."}
+{"level":"info","message":"\u001b[0mGET /api/v1/tweets/rules \u001b[36m304\u001b[0m 8.444 ms - -\u001b[0m\n"}
+{"level":"info","message":"Server started on port: 4000."}
+{"level":"info","message":"\u001b[0mGET /api/v1/tweets/rules \u001b[36m304\u001b[0m 9.264 ms - -\u001b[0m\n"}
+{"level":"info","message":"\u001b[0mGET /api/v1/tweets/rules \u001b[36m304\u001b[0m 1.260 ms - -\u001b[0m\n"}
+{"level":"info","message":"Server started on port: 4000."}
+{"level":"info","message":"\u001b[0mGET /api/v1/tweets/rules \u001b[36m304\u001b[0m 6.669 ms - -\u001b[0m\n"}
+{"level":"info","message":"Server started on port: 4000."}
+{"level":"info","message":"\u001b[0mGET /api/v1/tweets/rules \u001b[36m304\u001b[0m 8.135 ms - -\u001b[0m\n"}
+{"level":"info","message":"Server started on port: 4000."}
+{"level":"info","message":"\u001b[0mGET /api/v1/tweets/rules \u001b[36m304\u001b[0m 9.739 ms - -\u001b[0m\n"}
+{"level":"info","message":"Server started on port: 4000."}
+{"level":"info","message":"\u001b[0mGET /api/v1/tweets/rules \u001b[36m304\u001b[0m 9.074 ms - -\u001b[0m\n"}
+{"level":"info","message":"\u001b[0mGET /api/v1/tweets/rules \u001b[36m304\u001b[0m 2.922 ms - -\u001b[0m\n"}
+{"level":"info","message":"\u001b[0mGET /api/v1/tweets/rules \u001b[36m304\u001b[0m 2.264 ms - -\u001b[0m\n"}
+{"level":"info","message":"\u001b[0mGET /api/v1/tweets/rules \u001b[36m304\u001b[0m 1.773 ms - -\u001b[0m\n"}
+{"level":"info","message":"Server started on port: 4000."}
+{"level":"info","message":"\u001b[0mGET /api/v1/tweets/rules \u001b[36m304\u001b[0m 5.963 ms - -\u001b[0m\n"}
+{"level":"info","message":"\u001b[0mGET /api/v1/tweets/rules \u001b[36m304\u001b[0m 2.148 ms - -\u001b[0m\n"}
+{"level":"info","message":"\u001b[0mGET /api/v1/tweets/rules \u001b[36m304\u001b[0m 2.263 ms - -\u001b[0m\n"}
+{"level":"info","message":"\u001b[0mGET /api/v1/tweets/rules \u001b[36m304\u001b[0m 2.532 ms - -\u001b[0m\n"}
+{"level":"info","message":"\u001b[0mGET /api/v1/tweets/rules \u001b[32m200\u001b[0m 6.475 ms - 601\u001b[0m\n"}
+{"level":"info","message":"Server started on port: 4000."}
+{"level":"info","message":"\u001b[0mGET /api/v1/tweets/rules \u001b[32m200\u001b[0m 3362.168 ms - 61\u001b[0m\n"}
+{"level":"info","message":"Server started on port: 4000."}
+{"level":"info","message":"\u001b[0mGET /api/v1/tweets/rules \u001b[32m200\u001b[0m 2246.405 ms - 61\u001b[0m\n"}
+{"level":"info","message":"Server started on port: 4000."}
+{"level":"info","message":"Server started on port: 4000."}
+{"level":"info","message":"\u001b[0mGET /api/v1/tweets/rules \u001b[32m200\u001b[0m 2172.257 ms - 61\u001b[0m\n"}
+{"level":"info","message":"Server started on port: 4000."}
+{"level":"info","message":"\u001b[0mGET /api/v1/tweets/rules \u001b[32m200\u001b[0m 1285.394 ms - 61\u001b[0m\n"}
+{"level":"info","message":"\u001b[0mGET /api/v1/tweets/rules \u001b[32m200\u001b[0m 2041.664 ms - 61\u001b[0m\n"}
+{"level":"info","message":"\u001b[0mGET /api/v1/tweets/rules \u001b[32m200\u001b[0m 853.764 ms - 61\u001b[0m\n"}
+{"level":"info","message":"\u001b[0mGET /api/v1/tweets/rules \u001b[32m200\u001b[0m 2589.167 ms - 61\u001b[0m\n"}
+{"level":"info","message":"\u001b[0mGET /api/v1/tweets/rules \u001b[32m200\u001b[0m 1029.392 ms - 61\u001b[0m\n"}
+{"level":"info","message":"\u001b[0mGET /api/v1/tweets/rules \u001b[32m200\u001b[0m 1092.364 ms - 61\u001b[0m\n"}
+{"level":"info","message":"\u001b[0mPOST /api/v1/tweets/rules \u001b[32m200\u001b[0m 4249.185 ms - 2008\u001b[0m\n"}
+{"level":"info","message":"\u001b[0mGET /api/v1/tweets/rules \u001b[32m200\u001b[0m 1139.586 ms - 118\u001b[0m\n"}
+{"level":"info","message":"\u001b[0mGET /api/v1/tweets/rules \u001b[32m200\u001b[0m 2613.755 ms - 118\u001b[0m\n"}
+{"level":"info","message":"\u001b[0mPOST /api/v1/tweets/rules \u001b[32m200\u001b[0m 4323.648 ms - 2007\u001b[0m\n"}
+{"level":"info","message":"\u001b[0mPOST /api/v1/tweets/rules \u001b[32m200\u001b[0m 2418.035 ms - 2006\u001b[0m\n"}
+{"level":"info","message":"\u001b[0mGET /api/v1/tweets/rules \u001b[32m200\u001b[0m 984.075 ms - 211\u001b[0m\n"}
+{"level":"info","message":"\u001b[0mPOST /api/v1/tweets/rules \u001b[32m200\u001b[0m 1680.570 ms - 1927\u001b[0m\n"}
+{"level":"info","message":"\u001b[0mPOST /api/v1/tweets/rules \u001b[32m200\u001b[0m 1911.848 ms - 1928\u001b[0m\n"}
+{"level":"info","message":"\u001b[0mPOST /api/v1/tweets/rules \u001b[32m200\u001b[0m 2072.235 ms - 1928\u001b[0m\n"}
+{"level":"info","message":"\u001b[0mPOST /api/v1/tweets/rules \u001b[32m200\u001b[0m 3375.140 ms - 2003\u001b[0m\n"}
+{"level":"info","message":"\u001b[0mGET /api/v1/tweets/rules \u001b[32m200\u001b[0m 916.971 ms - 113\u001b[0m\n"}
+{"level":"info","message":"Server started on port: 4000."}
+{"level":"info","message":"Server started on port: 4000."}
+{"level":"info","message":"Server started on port: 4000."}
+{"level":"info","message":"Server started on port: 4000."}
+{"level":"info","message":"Server started on port: 4000."}
+{"level":"info","message":"\u001b[0mPOST /api/v1/tweets/rules \u001b[32m200\u001b[0m 1912.717 ms - 1928\u001b[0m\n"}
+{"level":"info","message":"Server started on port: 4000."}
+{"level":"info","message":"Server started on port: 4000."}
+{"level":"info","message":"Server started on port: 4000."}
+{"level":"info","message":"\u001b[0mGET /api/v1/tweets/rules \u001b[32m200\u001b[0m 1077.747 ms - 61\u001b[0m\n"}
+{"level":"info","message":"\u001b[0mPOST /api/v1/tweets/rules \u001b[32m200\u001b[0m 2121.509 ms - 2006\u001b[0m\n"}
+{"level":"info","message":"\u001b[0mGET /api/v1/tweets/rules \u001b[32m200\u001b[0m 2432.564 ms - 116\u001b[0m\n"}
+{"level":"info","message":"\u001b[0mPOST /api/v1/tweets/rules \u001b[32m200\u001b[0m 2347.940 ms - 1928\u001b[0m\n"}
+{"level":"info","message":"\u001b[0mPOST /api/v1/tweets/rules \u001b[32m200\u001b[0m 2217.125 ms - 2018\u001b[0m\n"}
+{"level":"info","message":"\u001b[0mPOST /api/v1/tweets/rules \u001b[32m200\u001b[0m 3665.037 ms - 1928\u001b[0m\n"}
+{"level":"info","message":"Server started on port: undefined."}
+{"level":"info","message":"Server started on port: 4000."}
