@@ -73,3 +73,4 @@
 {"level":"info","message":"\u001b[0mPOST /api/v1/tweets/rules \u001b[32m200\u001b[0m 3665.037 ms - 1928\u001b[0m\n"}
 {"level":"info","message":"Server started on port: undefined."}
 {"level":"info","message":"Server started on port: 4000."}
+{"level":"info","message":"Server started on port: 4000."}
