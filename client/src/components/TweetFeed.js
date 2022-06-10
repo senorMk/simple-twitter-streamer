@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useReducer } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Tweet from "./Tweet";
 import Rule from "./Rule";
@@ -17,66 +17,15 @@ import {
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 
-const initialState = {
-  tweets: [],
-  rules: [],
-  error: {},
-  isLoadingRules: false,
-};
-
 const rulesURL = `${Config.SERVER}/api/v1/tweets/rules`;
 
-const reducer = (state, action) => {
-  switch (action.type) {
-    case "add_tweet":
-      return {
-        ...state,
-        tweets: [action.payload, ...state.tweets],
-        error: null,
-        errors: [],
-      };
-    case "show_error":
-      return { ...state, error: action.payload };
-    case "add_errors":
-      return { ...state, errors: action.payload };
-    case "update_waiting":
-      return { ...state, error: null };
-    case "change_loading_status":
-      return { ...state, isLoadingRules: action.payload };
-    case "show_rules":
-      return { ...state, rules: action.payload, newRule: "" };
-    case "add_rule":
-      if (state.rules) {
-        return {
-          ...state,
-          rules: [...state.rules, ...action.payload],
-          newRule: "",
-          errors: [],
-        };
-      }
-      return {
-        ...state,
-        newRule: "",
-        errors: [],
-      };
-    case "delete_all_tweets":
-      return { ...state, tweets: [] };
-    case "delete_rule":
-      return {
-        ...state,
-        rules: [...state.rules.filter((rule) => rule.id !== action.payload)],
-      };
-    case "rule_changed":
-      return { ...state, newRule: action.payload };
-    default:
-      return state;
-  }
-};
-
 const TweetFeed = () => {
-  const [state, dispatch] = useReducer(reducer, initialState);
-  const { tweets, error } = state;
   const [keyword, setkeyword] = useState("");
+  const [isLoadingRules, setLoadingRules] = useState(false);
+  const [rules, setRules] = useState([]);
+  const [tweets, setTweets] = useState([]);
+  const [errors, setErrors] = useState([]);
+  const [error, setError] = useState({});
 
   const handleKeywordChange = (event) => {
     setkeyword(event.target.value);
@@ -84,7 +33,7 @@ const TweetFeed = () => {
 
   const handleStartWatching = async () => {
     if (keyword.length > 0) {
-      await createRule();
+      createRule();
     }
   };
 
@@ -96,17 +45,17 @@ const TweetFeed = () => {
     socket.on("connected", () => {});
     socket.on("tweet", (json) => {
       if (json.data) {
-        dispatch({ type: "add_tweet", payload: json });
+        setTweets((tweets) => [...tweets, json]);
       }
     });
     socket.on("heartbeat", (data) => {
-      dispatch({ type: "update_waiting" });
+      setError(null);
     });
     socket.on("error", (data) => {
-      dispatch({ type: "show_error", payload: data });
+      setError(data);
     });
     socket.on("authError", (data) => {
-      dispatch({ type: "add_errors", payload: [data] });
+      setErrors([data]);
     });
   };
 
@@ -119,31 +68,35 @@ const TweetFeed = () => {
   const createRule = async () => {
     const payload = { add: [{ value: keyword }] };
 
-    dispatch({ type: "change_loading_status", payload: true });
+    setLoadingRules(true);
     try {
       const response = await axios.post(rulesURL, payload);
 
-      if (response.data.body.errors)
-        dispatch({ type: "add_errors", payload: response.data.body.errors });
-      else {
-        dispatch({ type: "add_rule", payload: response.data.body.data });
+      if (response.data.body.errors) {
+        setErrors([response.data.body.errors]);
+      } else {
+        if (rules && rules.length > 0) {
+          setRules((rules) => [...rules, response.data.body.data]);
+        } else {
+          setRules(response.data.body.data);
+        }
       }
-      dispatch({ type: "change_loading_status", payload: false });
+      setLoadingRules(false);
     } catch (e) {
-      dispatch({
-        type: "add_errors",
-        payload: [{ detail: e.message }],
-      });
-      dispatch({ type: "change_loading_status", payload: false });
+      setErrors([{ detail: e.message }]);
+      setLoadingRules(false);
     }
   };
 
   const deleteRule = async (id) => {
     const payload = { delete: { ids: [id] } };
-    dispatch({ type: "change_loading_status", payload: true });
+    setLoadingRules(true);
+
     await axios.post(rulesURL, payload);
-    dispatch({ type: "delete_rule", payload: id });
-    dispatch({ type: "change_loading_status", payload: false });
+
+    setRules([...rules.filter((rule) => rule.id !== id)]);
+
+    setLoadingRules(false);
   };
 
   useEffect(() => {
@@ -152,24 +105,22 @@ const TweetFeed = () => {
 
   useEffect(() => {
     (async () => {
-      dispatch({ type: "change_loading_status", payload: true });
+      setLoadingRules(true);
 
       try {
         const response = await axios.get(rulesURL);
-        dispatch({
-          type: "show_rules",
-          payload: response.data.data,
-        });
+        const FoundRules = response.data.data;
+        if (FoundRules) {
+          setRules(response.data.data);
+        }
       } catch (e) {
-        dispatch({ type: "add_errors", payload: [e.response.data] });
+        setErrors([e.response.data]);
       }
-      dispatch({ type: "change_loading_status", payload: false });
+      setLoadingRules(false);
     })();
   }, []);
 
-  const errors = () => {
-    const { errors } = state;
-
+  const showErrors = () => {
     if (errors && errors.length > 0) {
       return errors.map((error) => (
         <ErrorMessage key={error.title} error={error} styleType="negative" />
@@ -177,15 +128,13 @@ const TweetFeed = () => {
     }
   };
 
-  const rules = () => {
-    const { isLoadingRules, rules } = state;
-
+  const showRules = () => {
     if (!isLoadingRules) {
       if (rules && rules.length > 0) {
         return rules.map((rule) => (
           <Rule
             key={rule.id}
-            data={rule}
+            rule={rule}
             onRuleDelete={(id) => deleteRule(id)}
           />
         ));
@@ -254,7 +203,7 @@ const TweetFeed = () => {
               variant="contained"
               color="primary"
               onClick={() => {
-                dispatch({ type: "delete_all_tweets" });
+                setTweets([]);
               }}
             >
               Delete
@@ -291,8 +240,8 @@ const TweetFeed = () => {
             </Button>
           </Box>
           <Typography variant="h5">Keywords:</Typography>
-          {errors()}
-          {rules()}
+          {showErrors()}
+          {showRules()}
         </Container>
       </Stack>
     </Container>
