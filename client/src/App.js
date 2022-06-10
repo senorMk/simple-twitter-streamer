@@ -1,6 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import TweetFeed from "./TweetFeed";
+import TweetFeed from "./components/TweetFeed";
 import { Box, Typography, Container, Avatar } from "@mui/material";
 
 const App = () => {
