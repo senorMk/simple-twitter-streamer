@@ -8,9 +8,10 @@
     "install-client": "cd client && npm install",
     "heroku-postbuild": "npm run install-client && npm run build",
     "server": "node server/index.js",
-    "heroku:add": "heroku git:remote -a",
-    "deploy:heroku": "git push heroku master",
-    "start": "npm run server"
+    "start": "npm run server",
+    "dev-client": "cd client && npm start",
+    "dev-server": "nodemon server/index.js",
+    "dev": "concurrently \"npm:dev-client\" \"npm:dev-server\""
   },
   "author": "Penjani Mkandawire",
   "license": "MIT",
