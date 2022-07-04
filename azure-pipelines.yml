@@ -9,6 +9,9 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
+variables:
+- group: simple-twitter-streamer
+
 steps:
   - task: NodeTool@0
     inputs:
@@ -20,6 +23,12 @@ steps:
       npm run install-client
       npm run build
     displayName: 'npm install, npm run install-client and npm run build'
+    env:
+      TWITTER_CONSUMER_API_KEY: $(TWITTER_CONSUMER_API_KEY)
+      TWITTER_CONSUMER_API_KEY_SECRET: $(TWITTER_CONSUMER_API_KEY_SECRET)
+      TWITTER_ACCESS_TOKEN: $(TWITTER_ACCESS_TOKEN)
+      TWITTER_ACCESS_TOKEN_SECRET: $(TWITTER_ACCESS_TOKEN_SECRET)
+      TWITTER_BEARER_TOKEN: $(TWITTER_BEARER_TOKEN)
 
   - task: ArchiveFiles@2
     inputs:
