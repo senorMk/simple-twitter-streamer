@@ -22,10 +22,19 @@ steps:
     inputs:
       script: 'echo REACT_APP_WEB_URL = $(REACT_APP_WEB_URL) > client/.env' 
     displayName: 'Setting client environment variables'
-
+    
   - task: CmdLine@2
     inputs:
-      script: 'echo TWITTER_CONSUMER_API_KEY = $(TWITTER_CONSUMER_API_KEY)\nTWITTER_CONSUMER_API_KEY_SECRET = $(TWITTER_CONSUMER_API_KEY_SECRET)\nTWITTER_ACCESS_TOKEN = $(TWITTER_ACCESS_TOKEN)\nTWITTER_ACCESS_TOKEN_SECRET = $(TWITTER_ACCESS_TOKEN_SECRET)\nTWITTER_BEARER_TOKEN = $(TWITTER_BEARER_TOKEN) > .env' 
+      script: |
+        echo TWITTER_CONSUMER_API_KEY=$(TWITTER_CONSUMER_API_KEY) > .env
+        
+        echo TWITTER_CONSUMER_API_KEY_SECRET=$(TWITTER_CONSUMER_API_KEY_SECRET) > .env
+        
+        echo TWITTER_ACCESS_TOKEN=$(TWITTER_ACCESS_TOKEN) > .env
+        
+        echo TWITTER_ACCESS_TOKEN_SECRET=$(TWITTER_ACCESS_TOKEN_SECRET) > .env
+        
+        echo TWITTER_BEARER_TOKEN=$(TWITTER_BEARER_TOKEN) > .env
     displayName: 'Setting server environment variables'
 
   - script: |
@@ -33,12 +42,6 @@ steps:
       npm run install-client
       npm run build
     displayName: 'npm install, npm run install-client and npm run build'
-    env:
-      TWITTER_CONSUMER_API_KEY: $(TWITTER_CONSUMER_API_KEY)
-      TWITTER_CONSUMER_API_KEY_SECRET: $(TWITTER_CONSUMER_API_KEY_SECRET)
-      TWITTER_ACCESS_TOKEN: $(TWITTER_ACCESS_TOKEN)
-      TWITTER_ACCESS_TOKEN_SECRET: $(TWITTER_ACCESS_TOKEN_SECRET)
-      TWITTER_BEARER_TOKEN: $(TWITTER_BEARER_TOKEN)
 
   - task: ArchiveFiles@2
     inputs:
