@@ -17,5 +17,6 @@ steps:
 
 - script: |
     npm install
-    npm run install-client && npm run build
-  displayName: 'npm install, npm install client and build'
+    npm run install-client
+    npm run build
+  displayName: 'npm install, npm run install-client and npm run build'
